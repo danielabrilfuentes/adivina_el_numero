@@ -3,24 +3,23 @@ x = (1-30)
 import random
 
 #processing
+import random
+
 def adivinar_numero(x):
     numero_secreto = random.randint(1, 30)
-    intentos = 0
 
-    print("Intenta adivinar un número entre 1 y 30.")
+    print("He pensado en un número entre 1 y 30. Adivina cuál es.")
 
-    while True:
-        intento = int(input("¿Cuál es tu número?: "))
-        intentos += 1
+    intento = int(input("coloca tu numero: "))
 
-        if intento == numero_secreto:
-            print(f"¡Felicidades! Adivinaste el número en {intentos} intentos.")
-            break
-        elif intento < numero_secreto:
-            print("fallaste el numero correcto es mayor. ¡Intenta de nuevo!")
+    if intento == numero_secreto:
+        print("¡Felicidades! Has adivinado el número correctamente.")
+    else:
+        if intento < numero_secreto:
+            print("El número que pensé es mayor que tu repuesta.")
         else:
-            print("fallaste el numero correcto es menor. ¡Intenta de nuevo!")
+            print("El número que pensé es menor que tu respuesta.")
+        print(f"Lo siento, el número correcto era: {numero_secreto}")
 
-#output
 # Llamamos a la función para iniciar el juego
 adivinar_numero(x)
